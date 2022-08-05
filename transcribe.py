@@ -24,9 +24,10 @@ GOOGLE_CLOUD_SPEECH_CREDENTIALS = r"""INSERT THE CONTENTS OF THE GOOGLE CLOUD SP
 #     print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
 # recognize speech using Google Cloud Speech
+# choose the language of your preference by changing the "language =" parameter
 
 try:
-    print(r.recognize_google_cloud(audio, credentials_json=GOOGLE_CLOUD_SPEECH_CREDENTIALS))
+    print(r.recognize_google_cloud(audio, language = "pt-BR", credentials_json=GOOGLE_CLOUD_SPEECH_CREDENTIALS))
 except sr.UnknownValueError:
     print("Google Cloud Speech could not understand audio")
 except sr.RequestError as e:
